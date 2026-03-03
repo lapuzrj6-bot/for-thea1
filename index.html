@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Be  Thea</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="intro-body">
+
+<div class="intro-screen">
+<h1 class="logo">Be  Thea</h1>
+<p class="fade-text">A little world made with love...</p>
+<button onclick="startSite()" class="enter-btn">
+Enter Our Love Story 
+</button>
+</div>
+
+<script>
+function startSite(){
+document.body.classList.add("fade-out");
+setTimeout(()=>{
+window.location.href="login.html";
+},1500);
+}
+</script>
+
+</body>
+</html>

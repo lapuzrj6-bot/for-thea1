@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="zoom-bg">
+
+<div class="login-box">
+<h2>For Thea 🌷</h2>
+
+<p>Question before entering my heart...</p>
+
+<input type="text" id="answer" placeholder="Where was our favorite beach?">
+
+<button onclick="checkAnswer()">Unlock ❤️</button>
+<p id="error"></p>
+</div>
+
+<script>
+function checkAnswer(){
+let ans=document.getElementById("answer").value.toLowerCase();
+
+if(ans==="bagasbas"){
+window.location.href="letter.html";
+}else{
+document.getElementById("error").innerText="Wrong answer 😢 Try again my love.";
+}
+}
+</script>
+
+</body>
+</html>

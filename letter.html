@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Thea ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="zoom-bg">
+
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="heart-lock-screen" id="lock">
+<div class="big-heart" onclick="openLove()">❤️</div>
+<p>Tap to unlock my heart 🔓</p>
+</div>
+
+<div class="main" id="mainContent">
+
+<h1 class="title">Hi My Thea 🌷</h1>
+
+<p id="typewriter" class="love-letter"></p>
+
+<div class="slideshow">
+<img id="slide">
+<p id="caption"></p>
+</div>
+
+<button onclick="surprise()" class="surprise-btn">
+Ultimate Surprise 💝
+</button>
+
+</div>
+
+<script>
+
+// Unlock
+function openLove(){
+document.getElementById("lock").style.display="none";
+document.getElementById("mainContent").style.display="block";
+fireworks();
+}
+
+// Fireworks
+function fireworks(){
+for(let i=0;i<40;i++){
+let spark=document.createElement("div");
+spark.className="spark";
+spark.style.left=Math.random()*100+"vw";
+spark.style.top=Math.random()*100+"vh";
+document.body.appendChild(spark);
+setTimeout(()=>spark.remove(),2000);
+}
+}
+
+// Typewriter Letter
+const text="Thea, you are my peace, my happiness, and my forever. Every memory with you is magic. I promise to love you stronger every single day. Forever yours, Be ❤️";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typewriter").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+window.onload=type;
+
+// Slideshow
+const photos=[
+"photo1.jpg","photo2.jpg","photo3.jpg",
+"photo4.jpg","photo5.jpg","photo6.jpg"
+];
+
+const messages=[
+"Our favorite night 🌙",
+"Your smile melts me 💕",
+"Beach memories 🌊",
+"You are my sunshine ☀️",
+"My best adventure partner 🌷",
+"Forever us ❤️"
+];
+
+let index=0;
+const slide=document.getElementById("slide");
+const caption=document.getElementById("caption");
+
+function showSlide(){
+slide.src=photos[index];
+caption.innerText=messages[index];
+index=(index+1)%photos.length;
+}
+setInterval(showSlide,3000);
+showSlide();
+
+// Surprise
+function surprise(){
+alert("I LOVE YOU MORE THAN WORDS CAN SAY ❤️ FOREVER YOURS - BE");
+}
+
+// Floating hearts
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="float-heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),5000);
+},300);
+
+</script>
+
+</body>
+</html>
